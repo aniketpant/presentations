@@ -6,3 +6,5 @@ This repository contains the presentations I have given in the past at various e
 
  * 15 Sep 2011 - WordCamp Jabalpur 2011 - Theme Development and Customization
  * 30 Sep 2011 - BarCamp Goa 2011 - The Power of CSS
+
+Note: Switch branches to check individual presentations.
