@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>WordCamp Jabalpur 2011 &ndash; Theme Development and Customization</title>
+
+		<meta name="description" content="My slides for WordCamp Jabalpur 2011 on Theme Development and Customization">
+		<meta name="author" content="Aniket Pant">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h1>Theme Development and Customization</h1>
+					<p>
+						<small>By <a href="http://aniketpant.com">Aniket Pant</a> / <a href="http://twitter.com/aniket_pant">@aniket_pant</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Preview</h2>
+					<ol>
+						<li class="fragment">Basic Concepts</li>
+						<li class="fragment">Stylesheets</li>
+						<li class="fragment">Functions</li>
+						<li class="fragment">Templates</li>
+						<li class="fragment">Child Themes</li>
+						<li class="fragment">Bones</li>
+					</ol>
+				</section>
+
+				<section>
+					<section>
+						<h1>What is WordPress?</h1>
+					</section>
+					<section>
+						<h2>Content<br/>Management<br/>System </h2>
+					</section>
+				</section>
+
+				<section>
+					<h2>What is a theme?</h2>
+					<p>
+						As per the codex &mdash;
+					</p>
+					<blockquote cite="http://codex.wordpress.com">
+						Fundamentally, the WordPress Theme system is a way to “skin” your weblog. Yet, it is more than just a “skin.” Skinning your site implies that only the design is changed. WordPress Themes can provide much more control over the look and presentation of the material on your website.
+					</blockquote>
+				</section>
+
+				<section>
+					<blockquote>
+						In Web design, we should all be craftsmen or craftswomen. We should break the frame and explore the unknown.
+					</blockquote>
+					<small>By <a href="http://twitter.com/colly">Simon Collison</a> at #frontend2011</small>
+				</section>
+
+				<section>
+					<h2>What makes a theme?</h2>
+					<ul>
+						<li class="fragment">Theme Stylesheets</li>
+						<li class="fragment">Function Files</li>
+						<li class="fragment">Template Files</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Theme Stylesheets</h2>
+					<p>This is the theme information of Bones</p>
+					<pre><code contenteditable class="css">
+/******************************************************************
+ 
+Theme Name: Bones 
+Theme URI: http://www.themble.com/bones 
+Description: An incredibly simple starter theme for developers. 
+Author: Eddie Machado 
+Author URI: http://www.themble.com/bones/ 
+Version: 1.07 
+Tags: html5, framework, css3, development
+
+License: GPL or whatever 
+License URI: ?
+ 
+All Default Styles are in library/css/default.css 
+I recommend not editing those files and making all 
+changes here. That way if something goes awry, you 
+can easily revert back to the original, but that's 
+totally up to you.
+ 
+Happy Developing!
+ 
+******************************************************************/
+					</code></pre>
+				</section>
+
+				<section>
+					<section>
+						<h2>Functions File</h2>
+						<p>You can put in your custom PHP codes in this file to modify some core functions of your theme.</p>
+						<p>It is often used to insert 2 sidebars, change the number of characters in the excerpt, add custom admin panels or a new type of post.</p>
+						<q>Put in your entire hand coded functions, tailor made for your theme.</q>
+					</section>
+					<section>
+						<h2>Example #1</h2>
+						<pre><code contenteditable class="php">
+function bones_excerpt() { 
+    the_excerpt();
+    echo '&lt;br /&gt;';
+    echo '&lt;p&gt;&lt;a href='".get_permalink()."'&gt; Read More...&lt;/a&gt;&lt;/p&gt;';
+}				
+						</code></pre>			
+					</section>
+					<section>
+						<h2>Example #2</h2>
+						<pre><code contenteditable>
+function bones_register_sidebars() {
+    register_sidebar(array(
+        'id' => 'sidebar1', 
+        'name' => 'Sidebar 1', 
+        'description' => 'The first (primary) sidebar.', 
+        'before_widget' => '&lt;div id="%1$s" class="widget %2$s"&gt;', 
+        'after_widget' => '&lt;/div>', 
+        'before_title' => '&lt;h4 class="widgettitle"&gt;', 
+        'after_title' => '&lt;/h4&gt;', 
+    )); 
+}			
+						</code></pre>			
+					</section>
+				</section>
+
+				<section>
+					<h2>Template Files</h2>
+					<table>
+						<tr>
+							<td>style.css</td>
+							<td>index.php</td>
+							<td>comments.php</td>
+							<td>home.php</td>
+						</tr>
+						<tr>
+							<td>single.php</td>
+							<td>single-<post-type>.php</td>
+							<td>search.php</td>
+							<td>attachment.php</td>
+						</tr>
+						<tr>
+							<td>image.php</td>
+							<td>404.php</td>
+							<td>page.php</td>
+							<td>category.php</td>
+						</tr>
+						<tr>
+							<td>tag.php</td>
+							<td>taxonomy.php</td>
+							<td>author.php</td>
+							<td>date.php</td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<h2>The Header</h2>
+					<pre><code contenteditable class="php">
+&lt;!doctype html> 
+&lt;head> 
+    &lt;meta charset="utf-8"> 
+    &lt;title>&lt;?php wp_title( '-', true, 'right' ); bloginfo( 'name' ); ?>&lt;/title> 
+    &lt;link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico"> 
+    &lt;link rel="pingback" href="<?php bloginfo('pingback_url'); ?>"> 
+    <!-- wordpress head functions -->
+    &lt;?php wp_head(); ?>
+    <!-- end of wordpress head --> 
+    &lt;link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>"> 
+&lt;/head>
+ 
+&lt;body &lt;?php body_class(); ?>> 
+	&lt;div id="container"> 
+	    &lt;header role="banner"> 
+	        ...
+	    &lt;/header> <!-- end header -->					
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>The Content</h2>
+					<pre><code contenteditable class="php">
+&lt;?php get_header(); ?>
+	&lt;div id="content" class="clearfix">
+        &lt;div id="main" class="col700 left clearfix" role="main">
+            &lt;?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+            &lt;article id="post-<?php the_ID(); ?>">
+                &lt;header>
+                    &lt;h1 class="h2">&lt;?php the_title(); ?>&lt;/h1>
+                &lt;/header> <!-- end article header -->
+                &lt;section class="post_content clearfix">
+                    <?php the_content(_e('<span class="read-more">Read more on "'.the_title('', '', false).'" »</span>', "bonestheme")); ?>
+                &lt;/section> <!-- end article section -->
+                &lt;footer>
+                	...
+                &lt;/footer> <!-- end article footer -->
+                </article> <!-- end article -->
+                &lt;?php comments_template(); ?>
+                &lt;?php endwhile; ?>    
+                &lt;?php else : ?>
+                &lt;article id="post-not-found">
+                    &lt;header>
+                        &lt;h1>Not Found&lt;/h1>
+                    &lt;/header>
+                    &lt;section class="post_content">
+                        &lt;p>Sorry, but the requested resource was not found on this site.&lt;/p>
+                    &lt;/section>
+                    &lt;footer>
+                    	...
+                    &lt;/footer>
+                &lt;/article>
+                &lt;?php endif; ?>
+        &lt;/div> <!-- end #main -->
+        &lt;?php get_sidebar(); // sidebar 1 ?>
+    &lt;/div> <!-- end #content -->
+&lt;?php get_footer(); ?>				
+					</code></pre>
+				</section>
+
+				<section>
+					<section>
+						<h1>The Mighty Loop</h1>
+					</section>
+
+					<section>
+						<h2>The Loop</h2>
+						<p>This is what you see.<br/>It will contain The Loop.<br/>The Loop is the key to printing all your posts.</p>
+						<p>This is how it starts: </p>
+
+						<pre><code contenteditable class="php">
+&lt;?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>							
+						</code></pre>
+
+						<p>And this is the end: </p>
+
+						<pre><code contenteditable class="php">
+&lt;?php endwhile; else: ?>
+ 
+&lt;p>&lt;?php _e('Sorry, no posts matched your criteria.'); ?></p>
+ 
+&lt;?php endif; ?>					
+						</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Single Post Type</h1>
+					</section>
+
+					<section>
+						<h2>single-&lt;post-type&gt;.php</h2>
+
+						<p>Another important feature in WordPress 3.0 is that you can add your own Custom Post Type Boxes.</p>
+						<p>The default list &ndash;<br/>Post, Page, Attachment, Revisions, Nav Menus </p>
+					</section>
+
+					<section>
+						<h2>Register a post type</h2>
+
+						<p>Add this to your <code>function.php</code></p>
+
+						<pre><code contenteditable class="php">
+register_post_type('movies', array( 
+    'label' => 'Movies', 
+    'public' => true, 
+    'show_ui' => true, 
+    'capability_type' => 'post', 
+    'hierarchical' => false, 
+    'rewrite' => array('slug' => 'movies'), 
+    'query_var' => true, 
+    'supports' => array( 
+        'title', 
+        'editor', 
+        'excerpt', 
+        'trackbacks', 
+        'custom-fields', 
+        'comments', 
+        'revisions', 
+        'thumbnail', 
+        'author', 
+        'page-attributes',) 
+) );							
+						</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<blockquote>
+						The content is like water. And design is like a flavour sprinkled on content.
+					</blockquote>
+					<small>By <a href="http://twitter.com/standardistas">@standardistas</a> at #frontend2011</small>
+				</section>
+
+				<section>
+					<blockquote>
+						People say Web Design is not coding, I call that bullshit.<br/>
+						We design the web by coding.
+					</blockquote>
+				</section>
+
+				<section>
+					<section>
+						<h1>Child Themes</h1>
+					</section>
+					<section>
+						<h2>Child Themes</h2>
+						<p>Derive something from another theme and what you get is a Child Theme.</p>
+						<p>You can do absolutely anything with a Child Theme, but the only difference between a new theme and a child theme is that.<br/>It would be residing in the parent theme's directory.</p>
+					</section>
+					<section>
+						<h2>Build a Child Theme</h2>
+						<p>Just make a directory in your parent theme directory.You can name it anything.</p>
+						<p>You can put anything in this directory.So, if it's just a styling change you wish to make, make a <code>style.css</code></p>
+						<p>There are some required information that you need to mention in the child theme's CSS like &ndash;<br/><strong>Theme Name</strong> &amp; <strong>Template</strong>.<br/>You can refer to the Codex regarding this.</p>
+					</section>
+				</section>
+
+				<section>
+					<h2>What we have covered</h2>
+					<ul>
+						<li class="fragment">The basic concepts of WordPress</li>
+						<li class="fragment">Little on Stylesheets</li>
+						<li class="fragment">Some snippets on functions</li>
+						<li class="fragment">Making Templates</li>
+						<li class="fragment">Building Child Themes</li>
+						<li class="fragment">My favorite theme bones</li>
+					</ul>
+				</section>
+
+				<section>
+					<blockquote>
+						We are the architects of the Web, and this is our playground.
+					</blockquote>
+				</section>
+
+				<section>
+					<h2>What do I do?</h2>
+					<p>Read <a href="http://smashingmagazine.com">Smashing Magazine</a> regularly.</p>
+					<p>Visit <a href="http://news.ycombinator.com">Hacker News</a> daily.</p>
+					<p>Read about typography.</p>
+					<p>Read anything and everything about CSS.</p>
+				</section>
+
+				<section>
+					<h1>Questions?</h1>
+				</section>
+
+				<section>
+					<h1>THE END</h1>
+					<h3>BY Aniket Pant / @aniket_pant</h3>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
