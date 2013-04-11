@@ -15,6 +15,11 @@
       text-decoration: none;
       font-weight: bold;
     }
+    .input {
+      padding: 5px;
+      border: 2px solid #ccc;
+      font-size: 1rem;
+    }
   </style>
 
   <body style="display: none">
@@ -514,6 +519,187 @@
   &lt;/footer&gt;
 
 &lt;/section&gt;</pre>
+      </article>
+
+      <article class="nobackground smaller">
+        <h2>
+          If you know of WordPress, then you will understand this better.
+        </h2>
+<pre>
+&lt;section&gt;
+  ...
+&lt;/section&gt;
+
+&lt;div id=&quot;sidebar&quot;&gt;
+  &lt;aside class=&quot;widget&quot;&gt;
+    ...
+  &lt;/aside&gt;
+  &lt;aside class=&quot;widget&quot;&gt;
+    ...
+  &lt;/aside&gt;
+  &lt;aside class=&quot;widget&quot;&gt;
+    ...
+  &lt;/aside&gt;
+&lt;/div&gt;</pre>
+      </article>
+
+      <article class="nobackground">
+        <h1>
+          A better look at<br/>
+          HTML5 <code>&lt;form&gt;</code>
+        </h1>
+        <p>
+          Bigger, Badder, Better
+        </p>
+      </article>
+
+      <article class="nobackground smaller">
+        <h3>
+          14 new attributes
+        </h3>
+        <ul>
+          <li><code>placeholder</code></li>
+          <li><code>autofocus</code></li>
+          <li><code>autocomplete</code></li>
+          <li><code>required</code></li>
+          <li><code>pattern</code></li>
+          <li><code>list</code></li>
+          <li><code>multiple</code></li>
+          <li><code>novalidate</code></li>
+          <li><code>formnovalidate</code></li>
+          <li><code>form</code></li>
+          <li><code>formaction</code></li>
+          <li><code>formenctype</code></li>
+          <li><code>formmethod</code></li>
+          <li><code>formtarget</code></li>
+        </ul>
+      </article>
+
+      <article class="nobackground smaller">
+        <h2>
+          <code>placeholder</code>
+        </h2>
+        <p>
+          <form>
+            <input type="text" placeholder="This is some placeholder text" class="input">
+            <input type="submit" value="Submit">
+          </form>          
+        </p>
+      </article>
+
+      <article class="nobackground smaller">
+        <h2>
+          <code>autofocus</code>
+        </h2>
+        <p>
+          <form>
+            <input type="text" placeholder="Already has focus" class="input" autofocus>
+            <input type="submit" value="Submit">
+          </form>
+        </p>
+      </article>
+
+      <article class="nobackground smaller">
+        <h2>
+          <code>required</code>
+        </h2>
+        <p>
+          <form>
+            <input type="text" placeholder="Required it is" class="input" required>
+            <input type="submit" value="Submit">
+          </form>
+        </p>
+      </article>
+
+      <article class="nobackground smaller">
+        <h2>
+          <code>required</code>
+        </h2>
+        <p>
+          <form>
+            <input type="text" placeholder="Single digit followed by three uppercase letters." class="input" pattern="[0-9][A-Z]{3}">
+            <input type="submit" value="Submit">
+          </form>
+        </p>
+      </article>
+
+      <article class="nobackground smaller">
+        <h2>
+          <code>list</code> and <code>datalist</code>
+        </h2>
+        <p>
+          <form>
+            <label>Your favorite fruit:
+            <datalist id="fruits">
+              <select name="fruits">
+                <option value="Blackberry">Blackberry</option>
+                <option value="Blackcurrant">Blackcurrant</option>
+                <option value="Blueberry">Blueberry</option>
+                <!-- … -->
+              </select>
+            If other, please specify:
+            </datalist>
+              <input type="text" name="fruit" list="fruits" class="input">
+            </label>
+          </form>
+        </p>
+      </article>
+
+      <article class="nobackground smaller">
+        <h2>
+          <code>multiple</code>
+        </h2>
+        <p>
+          <form>
+            <label>Upload files:
+            <input type="file" multiple name="upload"></label>
+          </form>          
+        </p>
+      </article>
+
+      <article class="nobackground smaller">
+        <h1>
+          <code>&lt;form&gt;</code> input types
+        </h1>
+      </article>
+
+      <article class="nobackground smaller">
+        <h3>
+          13 new types
+        </h3>
+        <ul>
+          <li><code>search</code></li>
+          <li><code>email</code></li>
+          <li><code>url</code></li>
+          <li><code>tel</code></li>
+          <li><code>number</code></li>
+          <li><code>range</code></li>
+          <li><code>date</code></li>
+          <li><code>month</code></li>
+          <li><code>week</code></li>
+          <li><code>time</code></li>
+          <li><code>datetime</code></li>
+          <li><code>datetime-local</code></li>
+          <li><code>color</code></li>
+        </ul>
+      </article>
+
+      <article class="nobackground smaller">
+        <form>
+          <input type="search" class="input">
+          <input type="email" class="input">
+          <input type="url" class="input">
+          <input type="tel" class="input">
+          <input type="number" class="input">
+          <input type="range" class="input">
+          <input type="date" class="input">
+          <input type="month" class="input">
+          <input type="week" class="input">
+          <input type="time" class="input">
+          <input type="datetime" class="input">
+          <input type="datetime-local" class="input">
+          <input type="color" class="input">
+        </form>
       </article>
 
     </section>
