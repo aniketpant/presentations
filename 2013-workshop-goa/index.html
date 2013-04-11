@@ -9,7 +9,13 @@
     <script src="http://html5slides.googlecode.com/svn/trunk/slides.js"></script>
   </head>
   
-  <style></style>
+  <style>
+    a {
+      color: #037F8C !important;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
 
   <body style="display: none">
 
@@ -28,10 +34,35 @@
           April 12, 2013
         </p>
         <p>
-          <a href="http://www.w3.org/html/logo/">
+          <a href="http://www.w3.org/html/logo/" class="logo">
           <img src="http://www.w3.org/html/logo/badge/html5-badge-h-connectivity-css3-device-graphics-multimedia-performance-semantics-storage.png" width="357" height="64" alt="HTML5 Powered with Connectivity / Realtime, CSS3 / Styling, Device Access, Graphics, 3D &amp; Effects, Multimedia, Performance &amp; Integration, Semantics, and Offline &amp; Storage" title="HTML5 Powered with Connectivity / Realtime, CSS3 / Styling, Device Access, Graphics, 3D &amp; Effects, Multimedia, Performance &amp; Integration, Semantics, and Offline &amp; Storage">
+          </a>
         </p>
-        </a>
+      </article>
+
+      <article class="nobackground">
+        <h3>
+          Overview
+        </h3>
+        <ul class="build">
+          <li>Part 1: Understanding HTML</li>
+          <li>Part 2: What's new in HTML5</li>
+          <li>Part 3: Writing better HTML</li>
+          <li>Part 4: Advanced Styling - CSS3</li>
+        </ul>
+      </article>
+
+      <article class="nobackground">
+        <h1>
+          Part 1:<br/>
+          Understanding<br/>
+          HTML
+        </h1>
+        <ul>
+          <li>What is HTML?</li>
+          <li>What different tags mean?</li>
+          <li>How to construct a simple page?</li>
+        </ul>
       </article>
 
       <article class="nobackground">
@@ -39,9 +70,95 @@
           What do we know about HTML?
         </h3>
         <ul class="build">
-          <li><strong class="red">H</strong>yper<strong class="red">T</strong>ext</li>
-          <li><strong class="red">M</strong>arkup</li>
-          <li><strong class="red">L</strong>anguage</li>
+          <li><strong class="black">H</strong>yper<strong class="black">T</strong>ext</li>
+          <li><strong class="black">M</strong>arkup</li>
+          <li><strong class="black">L</strong>anguage</li>
+        </ul>
+      </article>
+
+      <article class="nobackground">
+        <h3>
+          What is HTML?
+        </h3>
+        <blockquote>
+          <p>
+            HTML is the publishing language of the World Wide Web.
+          </p>
+        </blockquote>
+        <h3>
+          What about HTML5?
+        </h3>
+        <blockquote>
+          <p>
+            HTML5 contains powerful capabilities for Web-based applications with more powerful interaction, video support, graphics, more styling effects, and a full set of APIs. HTML5 adapts to any device, whether desktop, mobile, tablet, or television. HTML5 is an open platform developed under royalty free licensing terms.
+          </p>
+        </blockquote>
+        <div class="source">
+          <a href="http://www.w3.org/html/">www.w3.org/html</a>
+        </div>
+      </article>
+
+      <article class="nobackground smaller">
+        <h3>
+          Tags you should know of
+        </h3>
+        <ul>
+          <li><code>&lt;html&gt;</code></li>
+          <li><code>&lt;title&gt;</code></li>
+          <li><code>&lt;head&gt;</code></li>
+          <li><code>&lt;meta&gt;</code></li>
+          <li><code>&lt;link&gt;</code></li>
+          <li><code>&lt;script&gt;</code></li>
+          <li><code>&lt;body&gt;</code></li>
+          <li><code>&lt;p&gt;</code></li>
+          <li><code>&lt;a&gt;</code></li>
+          <li><code>&lt;b&gt;</code></li>
+          <li><code>&lt;i&gt;</code></li>
+          <li><code>&lt;img&gt;</code></li>
+          <li><code>&lt;h1&gt;&lt;h2&gt;&lt;h3&gt;&lt;h4&gt;&lt;h5&gt;&lt;h6&gt;</code></li>
+          <li><code>&lt;div&gt;</code></li>
+        </ul>
+      </article>
+
+      <article class="nobackground smaller">
+        <h3>
+          Basic Structure
+        </h3>
+        <pre>
+&lt;html&gt;
+
+  &lt;head&gt;
+    &lt;title&gt;Your webpage title&lt;/title&gt;
+
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;somestylesheet.css&quot;&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+      /* Add your custom style here */
+    &lt;/style&gt;
+
+    &lt;script src=&quot;somescript.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+      /* Add your javascript code here */
+    &lt;/script&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;div&gt;
+      ...
+    &lt;/div&gt;
+  &lt;/body&gt;
+
+&lt;/html&gt;</pre>
+      </article>
+
+      <article class="nobackground">
+        <h1>
+          Part 2:<br/>
+          What's new in<br/>
+          HTML5
+        </h1>
+        <ul>
+          <li>The new additions</li>
+          <li>Brand new tags</li>
         </ul>
       </article>
       
@@ -181,6 +298,18 @@
 
       <article class="nobackground">
         <h1>
+          Part 3:<br/>
+          Writing better<br/>
+          HTML
+        </h1>
+        <ul>
+          <li>The new additions</li>
+          <li>Brand new <code>&lt;tags&gt;</code></li>
+        </ul>
+      </article>
+
+      <article class="nobackground">
+        <h1>
           Was it an<br/>
           Information Overdose?
         </h1>
@@ -212,13 +341,12 @@
 
   &lt;/body&gt;
 
-&lt;/html&gt;
-        </pre>
+&lt;/html&gt;</pre>
       </article>
 
-      <article class="nobackground smaller">
+      <article class="nobackground">
         <h1>
-          How does HTML5 <br/>lead to more semantic code?
+          How does<br/>HTML5<br/>lead to semantic code?
         </h1>
         <p>
           You should read my article on <a href="http://aniketpant.com/essays/html5-semantics-and-good-coding-practices">HTML5 Semantics and Good Coding Practices</a>.
@@ -246,7 +374,7 @@
         </ul>
         <p>
           <strong>This is not the complete list.</strong><br/>
-          I have only put those <code>tags</code> which are of utmost importance.
+          I have only put those <code>&lt;tags&gt;</code> which are of utmost importance.
         </p>
       </article>
 
@@ -256,16 +384,15 @@
         </p>
 <pre>
 &lt;!-- No other option other than using classes --&gt;
-&lt;div class=&quot;header&quot;&gt;
+&lt;div id=&quot;header&quot;&gt;
   ...
 &lt;/div&gt;
-&lt;div class=&quot;content&quot;&gt;
+&lt;div id=&quot;content&quot;&gt;
   ...
 &lt;/div&gt;
-&lt;div class=&quot;footer&quot;&gt;
+&lt;div id=&quot;footer&quot;&gt;
   ...
-&lt;/div&gt;
-</pre>
+&lt;/div&gt;</pre>
         <p>
           After HTML5
         </p>
@@ -279,8 +406,114 @@
 &lt;/section&gt;
 &lt;footer&gt;
   ...
-&lt;/footer&gt;
+&lt;/footer&gt;</pre>
+      </article>
+
+      <article class="nobackground">
+        <h1>
+          What<br/>
+          becomes<br/>
+          what?
+        </h1>
+        <p>
+          Taking a closer look at the before and after.
+        </p>
+      </article>
+
+      <article class="nobackground smaller">
+        <h3>
+          Header
+        </h3>
+<pre>
+&lt;!-- What it used to be --&gt;
+&lt;div id=&quot;header&quot;&gt;
+  ...
+&lt;/div&gt;
 </pre>
+<pre>
+&lt;!-- What it is now --&gt;
+&lt;header&gt;
+  ...
+&lt;/header&gt;</pre>
+      </article>
+
+      <article class="nobackground smaller">
+        <h3>
+          Content
+        </h3>
+<pre>
+&lt;!-- What it used to be --&gt;
+&lt;div id=&quot;content&quot;&gt;
+  ...
+&lt;/div&gt;
+</pre>
+<pre>
+&lt;!-- What it is now --&gt;
+&lt;section&gt;
+  ...
+&lt;/section&gt;</pre>
+      </article>
+
+      <article class="nobackground smaller">
+        <h3>
+          Footer
+        </h3>
+<pre>
+&lt;!-- What it used to be --&gt;
+&lt;div id=&quot;footer&quot;&gt;
+  ...
+&lt;/div&gt;
+</pre>
+<pre>
+&lt;!-- What it is now --&gt;
+&lt;footer&gt;
+  ...
+&lt;/footer&gt;</pre>
+      </article>
+
+      <article class="nobackground smaller">
+        <h3>
+          Navigation
+        </h3>
+<pre>
+&lt;!-- What it used to be --&gt;
+&lt;div id=&quot;nav&quot;&gt;
+  &lt;ul class=&quot;nav&quot;&gt;
+    ...
+  &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+<pre>
+&lt;!-- What it is now --&gt;
+&lt;nav&gt;
+  &lt;ul class=&quot;nav&quot;&gt;
+    ...
+  &lt;/ul&gt;
+&lt;/nav&gt;</pre>
+      </article>
+
+      <article class="nobackground smaller">
+        <h2>
+          Why &lt;header&gt;, &lt;article&gt;, &lt;footer&gt; and &lt;nav&gt; make sense?
+        </h2>
+<pre>
+&lt;section&gt;
+
+  &lt;header&gt;&lt;!-- Why can any section not have it&#039;s own header --&gt;
+    ...
+  &lt;/header&gt;
+
+  &lt;article&gt;&lt;!-- And shouldn't the content be enclosed in a meaningful space --&gt;
+    ...
+  &lt;/article&gt;
+
+  &lt;footer&gt;&lt;!-- And for a section to have a footer makes sense too --&gt;
+    &lt;nav&gt;&lt;!-- It may also have a nav --&gt;
+      ...
+    &lt;/nav&gt;
+  &lt;/footer&gt;
+
+&lt;/section&gt;</pre>
       </article>
 
     </section>
