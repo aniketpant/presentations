@@ -7,13 +7,23 @@
 
     <meta charset="utf-8">
     <script src="http://html5slides.googlecode.com/svn/trunk/slides.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css'>
   </head>
   
   <style>
+    .slides > article > h1, h2, h3 {
+      font-family: 'Bitter', georgia, serif;
+    }
+    .slides > article > h1 {
+      letter-spacing: -1px;
+    }
+    .slides > article > h2, h3file:///home/aniket/projects/presentations/2013-workshop-goa/index.html#31 {
+      letter-spacing: 0;
+    }
     a {
+      font-family: 'Bitter', georgia, serif;
       color: #037F8C !important;
       text-decoration: none;
-      font-weight: bold;
     }
     .input {
       padding: 5px;
@@ -35,13 +45,25 @@
         </h1>
         <p>
           Aniket Pant
-          <br>
+          <br/>
           April 12, 2013
         </p>
         <p>
           <a href="http://www.w3.org/html/logo/" class="logo">
-          <img src="http://www.w3.org/html/logo/badge/html5-badge-h-connectivity-css3-device-graphics-multimedia-performance-semantics-storage.png" width="357" height="64" alt="HTML5 Powered with Connectivity / Realtime, CSS3 / Styling, Device Access, Graphics, 3D &amp; Effects, Multimedia, Performance &amp; Integration, Semantics, and Offline &amp; Storage" title="HTML5 Powered with Connectivity / Realtime, CSS3 / Styling, Device Access, Graphics, 3D &amp; Effects, Multimedia, Performance &amp; Integration, Semantics, and Offline &amp; Storage">
+            <img src="http://www.w3.org/html/logo/badge/html5-badge-h-connectivity-css3-device-graphics-multimedia-performance-semantics-storage.png" width="357" height="64" alt="HTML5 Powered with Connectivity / Realtime, CSS3 / Styling, Device Access, Graphics, 3D &amp; Effects, Multimedia, Performance &amp; Integration, Semantics, and Offline &amp; Storage" title="HTML5 Powered with Connectivity / Realtime, CSS3 / Styling, Device Access, Graphics, 3D &amp; Effects, Multimedia, Performance &amp; Integration, Semantics, and Offline &amp; Storage">
           </a>
+        </p>
+      </article>
+
+      <article class="nobackground">
+        <h2>
+          Who am I?
+        </h2>
+        <p>
+          I am <a href="http://aniketpant.com">Aniket</a>. You can start tweeting about this workshop now and mention me <a href="https://twitter.com/aniket_pant">@aniket_pant</a>.
+        </p>
+        <p>
+          I have been developing web applications for quite sometime now now. I mostly develop using PHP- <strong>Codeigniter</strong> and <strong>Laravel</strong> to be precise. And I also work on <strong>WordPress</strong>. Also, I love to speak.
         </p>
       </article>
 
@@ -53,7 +75,7 @@
           <li>Part 1: Understanding HTML</li>
           <li>Part 2: What's new in HTML5</li>
           <li>Part 3: Writing better HTML</li>
-          <li>Part 4: Advanced Styling - CSS3</li>
+          <li>Part 4: Advanced Styling &ndash; CSS3</li>
         </ul>
       </article>
 
@@ -153,6 +175,18 @@
   &lt;/body&gt;
 
 &lt;/html&gt;</pre>
+      </article>
+
+      <article class="nobackground">
+        <h2>
+          Tools we can use for live coding
+        </h2>
+        <ul>
+          <li><a href="http://jsfiddle.net">JSfiddle</a></li>
+          <li><a href="http://codepen.io">Code Pen</a></li>
+          <li><a href="http://dabblet.com">Dabblet</a></li>
+          <li><a href="http://jsbin.com">JSBin</a></li>
+        </ul>
       </article>
 
       <article class="nobackground">
@@ -298,6 +332,58 @@
         </p>
         <p>
           <img height="200" class="centered" src="images/html5-logo/html5_css3_styling.svg">
+        </p>
+      </article>
+
+      <article class="nobackground">
+        <h2>
+          How search engines make use of it?
+        </h2>
+        <p>
+          Open <a href="http://schema.org">schema.org</a>. You will come across a list of attributes that can be embedded in your HTML code which search engines pick up. These attributes may define a person, an event or an article.
+        </p>
+      </article>
+
+      <article class="nobackground">
+        <h2>
+          How web applications are making use of HTML5?
+        </h2>
+        <p>
+          If you use reading applications like Readability, then you would be knowing of the content they scrape from a page before converting it. These applications use <strong>microdata</strong> to pick up attributes.
+        </p>
+      </article>
+
+      <article class="nobackground">
+        <h2>
+          Websocket API
+        </h2>
+        <p>
+          Web Sockets are used to send messages to and from the server &ndash; i.e., a bi-directional socket. In contrast to other similar technologies, with Web Sockets, you can go across domains, and you&#039;re not bound by the same-origin policy. This means you can host your normal &quot;apps&quot; server while another server is for streaming content. Or you could host your own pages and connect to a live Twitter stream if your users turn on Web Socket support. (Source: HTML5 Doctor)
+        </p>
+      </article>
+
+      <article class="nobackground smaller">
+        <h3>
+          What the code looks like?
+        </h3>
+        <pre>
+var ws = new WebSocket(&#039;ws://somesite.com/updates&#039;);
+
+ws.onmessage = function (event) {
+  alert(event.data);
+};
+
+ws.onopen = function () {
+  ws.send(&#039;yay! we connected!&#039;);
+};</pre>
+      </article>
+
+      <article class="nobackground">
+        <h2>
+          Web Workers
+        </h2>
+        <p>
+          Web Workers are a way of creating a new thread of execution inside the browser. So, if you're running a number of javascripts in the background and your UI hangs. In this case it would be better to pass on the javascripts onto a Web Worker.
         </p>
       </article>
 
@@ -613,7 +699,7 @@
 
       <article class="nobackground smaller">
         <h2>
-          <code>required</code>
+          <code>pattern</code>
         </h2>
         <p>
           <form>
@@ -635,25 +721,13 @@
                 <option value="Blackberry">Blackberry</option>
                 <option value="Blackcurrant">Blackcurrant</option>
                 <option value="Blueberry">Blueberry</option>
-                <!-- … -->
+                <!-- ... -->
               </select>
             If other, please specify:
             </datalist>
               <input type="text" name="fruit" list="fruits" class="input">
             </label>
           </form>
-        </p>
-      </article>
-
-      <article class="nobackground smaller">
-        <h2>
-          <code>multiple</code>
-        </h2>
-        <p>
-          <form>
-            <label>Upload files:
-            <input type="file" multiple name="upload"></label>
-          </form>          
         </p>
       </article>
 
@@ -700,6 +774,27 @@
           <input type="datetime-local" class="input">
           <input type="color" class="input">
         </form>
+      </article>
+
+      <article class="nobackground">
+        <h1>
+          Part 4:<br/>
+          Advanced Styling &ndash; CSS3
+        </h1>
+        <ul>
+          <li>What we can achieve with CSS3?</li>
+          <li>Some demos</li>
+          <li>How frameworks have improved?</li>
+        </ul>
+      </article>
+
+      <article class="nobackground">
+        <h1>
+          Thank you.
+        </h1>
+        <p>
+          I am Aniket (<a href="http://twitter.com/aniket_pant">@aniket_pant</a>).<br/>Got any questions? Mail me at <a href="mailto:me@aniketpant.com">me@aniketpant.com</a>
+        </p>
       </article>
 
     </section>
